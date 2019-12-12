@@ -5,20 +5,10 @@ public class Joueur {
 	
 	private String nom;
 	private ArrayList<Carte> cartes;
-	private int nbCartes;
 	
-	public Joueur(String nom, ArrayList<Carte> cartes, int nbCartes) {
+	public Joueur(String nom, ArrayList<Carte> cartes) {
 		this.nom = nom;
 		this.cartes = cartes;
-		this.nbCartes = nbCartes;
-	}
-
-	public int getNbCartes() {
-		return nbCartes;
-	}
-
-	public void setNbCartes(int nbCartes) {
-		this.nbCartes = nbCartes;
 	}
 
 	public String getNom() {
@@ -36,15 +26,6 @@ public class Joueur {
 	public void setCartes(ArrayList<Carte> cartes) {
 		this.cartes = cartes;
 	}
-	
-	public boolean relancer() {
-		//a completer
-		return true;
-	}
-	
-	public boolean seCoucher() {
-		//a completer
-		return true;
-	} 
+		
 	
 }
