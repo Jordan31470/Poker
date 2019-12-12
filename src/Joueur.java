@@ -5,11 +5,20 @@ public class Joueur {
 	
 	private String nom;
 	private ArrayList<Carte> cartes;
+	private int nbCartes;
 	
-	public Joueur(String nom, ArrayList<Carte> cartes) {
-		super();
+	public Joueur(String nom, ArrayList<Carte> cartes, int nbCartes) {
 		this.nom = nom;
 		this.cartes = cartes;
+		this.nbCartes = nbCartes;
+	}
+
+	public int getNbCartes() {
+		return nbCartes;
+	}
+
+	public void setNbCartes(int nbCartes) {
+		this.nbCartes = nbCartes;
 	}
 
 	public String getNom() {
