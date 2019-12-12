@@ -1,17 +1,19 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Plateau {
-	private Carte cartes;
+	private HashMap<String,Carte> cartes;
+	private ArrayList<Carte> mainPile;
 	private ArrayList<Carte> pile1 ;
 	private ArrayList<Carte> pile2;
 	private ArrayList<Carte> middle;
 	
 	
-	public Plateau(Carte cartes, ArrayList<Carte> pile1, ArrayList<Carte> pile2, ArrayList<Carte> middle) {
-		this.cartes = cartes;
+	public Plateau(ArrayList<Carte> pile1, ArrayList<Carte> pile2, ArrayList<Carte> middle) {
 		this.pile1 = pile1;
 		this.pile2 = pile2;
 		this.middle = middle;
+		this.cartes.put("DEUX", value)
 	}
 	
 	
