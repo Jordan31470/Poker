@@ -2,11 +2,15 @@ import java.util.HashMap;
 
 public class Carte {
 	 
-	
-	
 	private HashMap<String,Integer> valeur= new HashMap<String,Integer>();
 	private Couleur couleur;
-	private int nbCartes;
+	private static final int nbCartes = 52;
+	
+	public Carte(HashMap<String, Integer> valeur, Couleur couleur, int nbCartes) {
+		this.valeur = valeur;
+		this.couleur = couleur;
+	}
+
 	public void valeur() {
 		valeur.put("1", 1);
 		valeur.put("2", 2);
@@ -21,10 +25,7 @@ public class Carte {
 		valeur.put("VALLET", 11);
 		valeur.put("DAME", 12);
 		valeur.put("ROI", 13);
-		valeur.put("8", 14);
-		
-	   
-	    System.out.println(valeur);		
+		valeur.put("AS", 14); 
 	}
 	
 
