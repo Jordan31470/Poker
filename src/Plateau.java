@@ -5,16 +5,12 @@ import java.util.List;
 public class Plateau {
 	// private HashMap<String,Carte> cartes;
 	private List<Carte> mainPile;
-	private List<Carte> pile1 ;
-	private List<Carte> pile2;
 	private List<Carte> middle;
 	private List<Joueur> joueurs;
 	
 	
 	public Plateau(ArrayList<Carte> pile1, ArrayList<Carte> pile2, ArrayList<Carte> middle) {
 		this.joueurs = new ArrayList<Joueur>();
-		this.pile1 = pile1;
-		this.pile2 = pile2;
 		this.middle = middle;
 		this.mainPile.add(new Carte(Couleur.CARREAU,Valeur.TROIS));
 		this.mainPile.add(new Carte(Couleur.TREFLE,Valeur.DIX));
@@ -30,12 +26,37 @@ public class Plateau {
 	
 	
 	//méthode qui distribue les 2 cartes par joueur
-	public void distribuer(Carte carte, Joueur joueur) {
-		this.mainPile.remove(carte);
-		joueur.recupererCarte(carte);
+	public void distribuer() {
+		int rang = (int) (Math.random() * 10 );
+		this.joueurs.get(0).recupererCarte(this.mainPile.get(rang));
+		this.mainPile.remove(this.mainPile.get(rang));
+		int rang1 = (int) (Math.random() * 10 );
+		this.joueurs.get(0).recupererCarte(this.mainPile.get(rang1));
+		this.mainPile.remove(this.mainPile.get(rang1));
+		int rang2 = (int) (Math.random() * 10 );
+		this.joueurs.get(1).recupererCarte(this.mainPile.get(rang2));
+		this.mainPile.remove(this.mainPile.get(rang2));
+		int rang3 = (int) (Math.random() * 10 );
+		this.joueurs.get(1).recupererCarte(this.mainPile.get(rang3));
+		this.mainPile.remove(this.mainPile.get(rang3));
 	}
 	
+	
 	//méthode qui distribue 5 cartes communes aux 2 joueurs
+	public void distribuerMiddle() {
+		for(int i = 0; i<5;i++) {
+			int rang = (int) (Math.random() * 10 );
+			this.middle.add(this.mainPile.get(rang));
+			this.mainPile.remove(this.mainPile.get(rang));
+		}
+		for(int i = 0; i<5;i++) {
+			this.joueurs.get(0).recupererCarte(this.middle.get(i));
+		}
+		for(int i = 0; i<5;i++) {
+			this.joueurs.get(1).recupererCarte(this.middle.get(i));
+		}
+	}
+	
 	
 	
 	
