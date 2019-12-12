@@ -2,5 +2,12 @@
 public class Plateau {
 	
 	private Couleur couleur;
-	private 
+	
+	//méthode qui distribue les 2 cartes par joueur
+	
+	
+	//méthode qui distribue 5 cartes communes aux 2 joueurs
+	
+	}
+	
 }
